@@ -1,8 +1,12 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from './views/Home.vue';
+import Features from './views/Features.vue';
+import Started from './views/Started.vue';
+import Login from './views/Login.vue';
+import Benefits from './views/Benefits.vue';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
@@ -14,12 +18,24 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
+      path: '/features',
+      name: 'features',
+      component: Features
+    },
+    {
+      path: '/started',
+      name: 'started',
+      component: Started
+    },
+    {
+      path: '/benefits',
+      name: 'benefits',
+      component: Benefits
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
   ]
-})
+});
